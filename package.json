@@ -63,7 +63,7 @@
     "micro-joi": "~2.0.0",
     "micro-ratelimit": "~0.3.0",
     "micro-sentry": "~1.2.0",
-    "nodemailer": "~4.1.2"
+    "nodemailer": "~4.2.0"
   },
   "devDependencies": {
     "codecov": "~2.3.0",
