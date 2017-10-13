@@ -1,5 +1,7 @@
 # mep-api
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rockchalkwushock/mep-api.svg)](https://greenkeeper.io/)
+
 ## TODO
 
 1. Read on `compression` options.
