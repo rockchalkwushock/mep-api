@@ -1,0 +1,76 @@
+{
+  "name": "mep-api",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "author":
+    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "description": "Mail client micro-service for mashaeltsovaphotography.com.",
+  "repository": "https://github.com/rockchalkwushock/mep-api.git",
+  "main": "index.js",
+  "scripts": {
+    "commit": "nps commit",
+    "dev": "nps dev",
+    "precommit": "lint-staged",
+    "prettier": "prettier --single-quote --no-semi --write",
+    "start": "nps",
+    "test": "nps test"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "bail": true,
+    "collectCoverageFrom": ["server/**/**/*.js"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": ["yarn prettier", "git add"]
+  },
+  "now": {
+    "alias": ["mep-client"],
+    "dotenv": true,
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "files": [],
+    "name": "mep-mail-api"
+  },
+  "dependencies": {
+    "dotenv-safe": "~4.0.4",
+    "joi": "~11.3.4",
+    "micro": "~9.0.0",
+    "micro-compose": "~0.0.3",
+    "micro-compress": "~1.0.0",
+    "micro-cors": "~0.0.4",
+    "micro-joi": "~2.0.0",
+    "micro-ratelimit": "~0.3.0",
+    "micro-sentry": "~1.2.0",
+    "nodemailer": "~4.1.2"
+  },
+  "devDependencies": {
+    "codecov": "~2.3.0",
+    "commitizen": "~2.9.6",
+    "cz-conventional-changelog": "~2.0.0",
+    "eslint": "~4.8.0",
+    "eslint-config-equimper": "~2.2.1",
+    "eslint-config-prettier": "~2.6.0",
+    "husky": "~0.14.3",
+    "jest": "~21.2.1",
+    "lint-staged": "~4.2.3",
+    "micro-dev": "~1.2.3",
+    "nps": "~5.7.1",
+    "nps-utils": "~1.4.0",
+    "prettier": "~1.7.4"
+  }
+}

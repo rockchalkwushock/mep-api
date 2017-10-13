@@ -15,7 +15,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+coverage/
 
 # nyc test coverage
 .nyc_output
@@ -30,7 +30,11 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+.next/
+build/
+dist/
+es/
+lib/
 
 # Dependency directories
 node_modules/
@@ -51,9 +55,18 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
+# Output of opening tarball
+package/
+
 # Yarn Integrity file
 .yarn-integrity
 
 # dotenv environment variables file
 .env
 
+# Editors
+.idea/
+.vscode/
+
+# Other
+.DS_Store
