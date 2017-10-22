@@ -13,8 +13,11 @@ module.exports.client = async (req, res) => {
       data = await json(req)
       html = template(data)
       await iCloudTransporter.sendMail({ html })
-      send(res, 200, { message: 'Your email was sent!' })
+      send(res, 200, { message: 'Your booking request was sent!' })
     } catch (e) {
+      send(res, 400, {
+        error: 'There was a problem with your request, please try back later.'
+      })
       throw e
     }
   } else {
@@ -22,8 +25,11 @@ module.exports.client = async (req, res) => {
       data = await json(req)
       html = template(data)
       await mailRuTransporter.sendMail({ html })
-      send(res, 200, { message: 'Your email was sent!' })
+      send(res, 200, { message: 'Your booking request was sent!' })
     } catch (e) {
+      send(res, 400, {
+        error: 'There was a problem with your request, please try back later.'
+      })
       throw e
     }
   }

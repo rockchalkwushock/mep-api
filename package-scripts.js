@@ -9,7 +9,7 @@ module.exports = {
     clean: series(rimraf('coverage')),
     commit: 'git cz',
     default: `${crossEnv('NODE_ENV=production')} micro`,
-    dev: `${crossEnv('NODE_ENV=development')} micro-dev`,
+    dev: `${crossEnv('NODE_ENV=development')} micro-dev -p 4000`,
     lint: {
       default: 'eslint __tests__ server',
       fix: series.nps('lint --fix')

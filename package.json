@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "author":
-    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "description": "Mail client micro-service for mashaeltsovaphotography.com.",
   "repository": "https://github.com/rockchalkwushock/mep-api.git",
   "main": "index.js",
@@ -24,7 +23,9 @@
   },
   "jest": {
     "bail": true,
-    "collectCoverageFrom": ["server/**/**/*.js"],
+    "collectCoverageFrom": [
+      "server/**/**/*.js"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 50,
@@ -36,10 +37,15 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "*.js": ["yarn prettier", "git add"]
+    "*.js": [
+      "yarn prettier",
+      "git add"
+    ]
   },
   "now": {
-    "alias": ["mep-v1"],
+    "alias": [
+      "mep-v1"
+    ],
     "dotenv": true,
     "env": {
       "NODE_ENV": "production"
@@ -55,7 +61,7 @@
   },
   "dependencies": {
     "dotenv-safe": "~4.0.4",
-    "joi": "~11.3.4",
+    "joi": "~13.0.1",
     "micro": "~9.0.0",
     "micro-compose": "~0.0.3",
     "micro-compress": "~1.0.0",
@@ -63,18 +69,18 @@
     "micro-joi": "~2.0.0",
     "micro-ratelimit": "~0.3.0",
     "micro-sentry": "~1.2.0",
-    "nodemailer": "~4.1.2"
+    "nodemailer": "~4.2.0"
   },
   "devDependencies": {
     "codecov": "~2.3.0",
     "commitizen": "~2.9.6",
     "cz-conventional-changelog": "~2.0.0",
-    "eslint": "~4.8.0",
+    "eslint": "~4.9.0",
     "eslint-config-equimper": "~2.2.1",
     "eslint-config-prettier": "~2.6.0",
     "husky": "~0.14.3",
     "jest": "~21.2.1",
-    "lint-staged": "~4.2.3",
+    "lint-staged": "~4.3.0",
     "micro-dev": "~1.2.3",
     "nps": "~5.7.1",
     "nps-utils": "~1.4.0",
