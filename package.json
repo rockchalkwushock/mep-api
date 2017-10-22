@@ -61,14 +61,13 @@
   },
   "dependencies": {
     "dotenv-safe": "~4.0.4",
-    "joi": "~13.0.1",
     "micro": "~9.0.0",
-    "micro-compose": "~0.0.3",
     "micro-compress": "~1.0.0",
     "micro-cors": "~0.0.4",
-    "micro-joi": "~2.0.0",
     "micro-ratelimit": "~0.3.0",
     "micro-sentry": "~1.2.0",
+    "microrouter": "~2.2.3",
+    "mongoose": "~4.12.4",
     "nodemailer": "~4.2.0"
   },
   "devDependencies": {
