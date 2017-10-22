@@ -7,6 +7,19 @@ const template = require('../../views')
 let data
 let html
 
+/**
+ * @function client
+ *
+ * @description
+ * Takes in form data from the client and dispatches
+ * email using defined transporter.
+ *
+ * @param {Object} req
+ * @param {Object} res
+ *
+ * @returns {Object} res.message
+ * @throws {Object} res.error
+ */
 module.exports.client = async (req, res) => {
   if (!isProd) {
     try {

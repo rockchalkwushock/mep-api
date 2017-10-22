@@ -1,5 +1,4 @@
 const isProd = process.env.NODE_ENV === 'production'
-
 const window = parseInt(process.env.WINDOW, 10)
 const limit = parseInt(process.env.LIMIT, 10)
 
@@ -55,7 +54,7 @@ module.exports = {
 
 module.exports.opts = {
   cors: {
-    allowMethods: ['POST'],
+    allowMethods: ['GET, POST'],
     allowHeaders: [
       'X-Requested-With',
       'Access-Control-Allow-Origin',
@@ -75,7 +74,7 @@ module.exports.opts = {
       req.connection.remoteAddress ||
       req.socket.remoteAddress ||
       req.connection.socket.remoteAddress,
-    headers: true // default: false
+    headers: !isProd // default: false
   }
 }
 
