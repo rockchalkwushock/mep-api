@@ -253,7 +253,7 @@ module.exports = data => `
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="email-container">
       <tr>
         <td style="padding: 20px 0; text-align: center">
-          <img src="http://placehold.it/200x50" width="600" height="" alt="mep_logo" border="0" style="height: auto; background: #dddddd; font-size: 15px; line-height: 20px; color: #555555;">
+        <img src="https://res.cloudinary.com/mashaeltsovaphotography/c_scale,dpr_auto,f_auto,q_auto:best,w_300/watermark.png" alt="masha-eltsova-photography logo">
         </td>
       </tr>
     </table>
