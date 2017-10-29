@@ -7,12 +7,9 @@ const { get, post, router } = require('microrouter')
 const sentry = require('micro-sentry')
 
 const { client } = require('./services/mail/clients')
-const { getImagesByTag } = require('./services/cloudinary')
+const { getImageIds } = require('./services/cloudinary')
 
-const service = router(
-  get('/images/:tag', getImagesByTag),
-  post('/mail', client)
-)
+const service = router(get('/images/:tag', getImageIds), post('/mail', client))
 
 const compressedService = compress(service)
 const corsProtectedService = cors(compressedService)

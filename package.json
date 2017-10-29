@@ -60,7 +60,6 @@
     "name": "mep-mail-api"
   },
   "dependencies": {
-    "cloudinary": "^1.9.1",
     "dotenv-safe": "^4.0.4",
     "micro": "^9.0.0",
     "micro-compress": "^1.0.0",
