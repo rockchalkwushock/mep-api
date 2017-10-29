@@ -7,4 +7,4 @@
 3. Read on `rate-limit` options.
 4. Test endpoint using `ethereal`.
 5. Improve validation with `joi`.
-6. Add logo to email template.
+~6. Add logo to email template.~
