@@ -3,16 +3,6 @@ const window = parseInt(process.env.WINDOW, 10)
 const limit = parseInt(process.env.LIMIT, 10)
 
 module.exports = {
-  ethereal: e => ({
-    host: e.smtp.host,
-    port: e.smtp.port,
-    secure: e.smtp.secure,
-    auth: {
-      user: process.env.ETHEREAL_USER,
-      pass: process.env.ETHEREAL_PASS
-    },
-    debug: !isProd
-  }),
   iCloud: {
     config: {
       host: 'smtp.mail.me.com',

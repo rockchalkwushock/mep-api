@@ -1,24 +1,26 @@
-/* eslint-disable no-console */
-const { createTestAccount, createTransport } = require('nodemailer')
+// TODO Test with Ethereal account
 
-const { ethereal } = require('../config')
-const { etherealMessage } = require('../services/mail/messages')
+// /* eslint-disable no-console */
+// const { createTestAccount, createTransport } = require('nodemailer')
 
-module.exports.test = createTestAccount(async (err, data) => {
-  try {
-    if (err) {
-      console.error(`Failed to create a testing account.${err.message}`)
-      return process.exit(1)
-    }
-    console.log('Credentials obtained, sending message...')
-    const config = ethereal(data)
-    const transporter = await createTransport(config)
-    return await transporter.sendMail(etherealMessage)
-  } catch (e) {
-    console.error(e)
-    throw e
-  }
-})
+// const { ethereal } = require('../config')
+// const { etherealMessage } = require('../services/mail/messages')
+
+// module.exports.test = createTestAccount(async (err, data) => {
+//   try {
+//     if (err) {
+//       console.error(`Failed to create a testing account.${err.message}`)
+//       return process.exit(1)
+//     }
+//     console.log('Credentials obtained, sending message...')
+//     const config = ethereal(data)
+//     const transporter = await createTransport(config)
+//     return await transporter.sendMail(etherealMessage)
+//   } catch (e) {
+//     console.error(e)
+//     throw e
+//   }
+// })
 
 /**
  * { accepted: [ 'recipient@example.com' ],
