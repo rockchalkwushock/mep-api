@@ -10,19 +10,11 @@ module.exports = {
     commit: 'git cz',
     default: `${crossEnv('NODE_ENV=production')} micro`,
     dev: `${crossEnv('NODE_ENV=development')} micro-dev -p 4000`,
-    lint: {
-      default: 'eslint __tests__ server',
-      fix: series.nps('lint --fix')
-    },
     reportCoverage: 'codecov',
     test: {
       default: 'jest --runInBand',
       coverage: series.nps('test --coverage --silent'),
       watch: series.nps('test --watch')
-    },
-    validate: {
-      default: concurrent.nps('lint', 'test'),
-      withCoverage: concurrent.nps('lint', 'test.coverage')
     }
   }
 }
