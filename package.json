@@ -29,6 +29,7 @@
     "alias": ["mep-v2"],
     "files": [
       "./server",
+      ".env.example",
       "index.js",
       "package.json",
       "yarn.lock"
