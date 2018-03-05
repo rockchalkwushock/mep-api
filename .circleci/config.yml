@@ -33,12 +33,12 @@ jobs:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              url=$(now -t ${NOW_TOKEN} -e CLIENT_URL=${CLIENT_URL} -e CLOUD_KEY=${CLOUD_KEY} -e CLOUD_NAME=${CLOUD_NAME} -e CLOUD_SECRET=${CLOUD_SECRET} -e ICLOUD_PASS=${ICLOUD_PASS} -e ICLOUD_USER=${ICLOUD_USER} -e LIMT=${LIMIT} -e MAIL_RU_PASS=${MAIL_RU_PASS} -e MAIL_RU_USER=${MAIL_RU_USER} -e MONGO_URI=${MONGO_URI} -e NODE_ENV=${NODE_ENV} -e SENTRY_URL=${SENTRY_URL} -e WINDOW=${WINDOW} 2>/dev/null)
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
               echo "Site deployed to ${url}."
               now -t ${NOW_TOKEN} alias $url mep-v2
               echo "${url} aliased to https://mep-v2.now.sh"
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              url=$(now -t ${NOW_TOKEN} -e CLIENT_URL=${CLIENT_URL} -e CLOUD_KEY=${CLOUD_KEY} -e CLOUD_NAME=${CLOUD_NAME} -e CLOUD_SECRET=${CLOUD_SECRET} -e ICLOUD_PASS=${ICLOUD_PASS} -e ICLOUD_USER=${ICLOUD_USER} -e LIMT=${LIMIT} -e MAIL_RU_PASS=${MAIL_RU_PASS} -e MAIL_RU_USER=${MAIL_RU_USER} -e MONGO_URI=${MONGO_URI} -e NODE_ENV=${NODE_ENV} -e SENTRY_URL=${SENTRY_URL} -e WINDOW=${WINDOW} 2>/dev/null)
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
               echo "Site deployed to ${url}."
               now -t ${NOW_TOKEN} alias $url mep-beta
               echo "${url} aliased to https://mep-beta.now.sh"

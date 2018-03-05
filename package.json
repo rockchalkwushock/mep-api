@@ -10,7 +10,7 @@
   "scripts": {
     "cm": "git cz",
     "dev": "NODE_ENV=development micro-dev -p 4000",
-    "now-start": "micro"
+    "now-start": "NODE_ENV=production micro"
   },
   "config": {
     "commitizen": {
