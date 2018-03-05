@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  checkout_code:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/mep-api
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/mep-api
+      - restore_cache:
+          keys:
+            - 'yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+            - 'yarn-cache-{{ .Branch }}'
+            - 'yarn-cache-'
+      - run: yarn install
+      - save_cache:
+          key: 'yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+          paths: node_modules
+      - persist_to_workspace:
+          root: .
+          paths: .
+  deployment:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/mep-api
+    steps:
+      - attach_workspace:
+          at: ~/mep-api
+      - run: yarn install
+      - run: sudo yarn global add now
+      - deploy:
+          name: Deploy & Alias.
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url mep-v2
+              echo "${url} aliased to https://mep-v2.now.sh"
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url mep-beta
+              echo "${url} aliased to https://mep-beta.now.sh"
+            else
+              echo "This failed miserably!"
+            fi
+workflows:
+  version: 2
+  launch_api:
+    jobs:
+      - checkout_code
+      - deployment:
+          requires:
+            - checkout_code
+          filters:
+            branches:
+              only:
+                - development
+                - master
