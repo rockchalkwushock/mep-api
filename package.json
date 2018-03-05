@@ -10,7 +10,7 @@
   "scripts": {
     "cm": "git cz",
     "dev": "NODE_ENV=development micro-dev -p 4000",
-    "now-start": "NODE_ENV=production micro"
+    "now-start": "micro"
   },
   "config": {
     "commitizen": {
@@ -27,21 +27,6 @@
   },
   "now": {
     "alias": ["mep-v2"],
-    "env": {
-      "CLIENT_URL": "${CLIENT_URL}",
-      "CLOUD_KEY": "${CLOUD_KEY}",
-      "CLOUD_NAME": "${CLOUD_NAME}",
-      "CLOUD_SECRET": "${CLOUD_SECRET}",
-      "ICLOUD_PASS": "${ICLOUD_PASS}",
-      "ICLOUD_USER": "${ICLOUD_USER}",
-      "LIMIT": "${LIMIT}",
-      "MAIL_RU_PASS": "${MAIL_RU_PASS}",
-      "MAIL_RU_USER": "${MAIL_RU_USER}",
-      "MONGO_URI": "${MONGO_URI}",
-      "NODE_ENV": "production",
-      "SENTRY_URL": "${SENTRY_URL}",
-      "WINDOW": "${WINDOW}"
-    },
     "files": [
       "./server",
       "index.js",
