@@ -23,13 +23,17 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --single-quote --no-semi --write", "git add"]
+    "*.js": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   },
   "now": {
-    "alias": ["mep-v2"],
+    "alias": [
+      "mep-v2"
+    ],
     "files": [
       "./server",
-      ".env.example",
       "index.js",
       "package.json",
       "yarn.lock"
@@ -37,7 +41,6 @@
     "name": "mep-mail-api"
   },
   "dependencies": {
-    "dotenv-safe": "^5.0.1",
     "micro": "^9.1.0",
     "micro-compress": "^1.0.0",
     "micro-cors": "^0.1.0",
