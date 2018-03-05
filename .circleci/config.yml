@@ -33,12 +33,12 @@ jobs:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              url=$(now -t ${NOW_TOKEN} -e NODE_ENV="production" 2>/dev/null)
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
               echo "Site deployed to ${url}."
               now -t ${NOW_TOKEN} alias $url mep-v2
               echo "${url} aliased to https://mep-v2.now.sh"
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              url=$(now -t ${NOW_TOKEN} -e NODE_ENV="production" 2>/dev/null)
+              url=$(now -t ${NOW_TOKEN} 2>/dev/null)
               echo "Site deployed to ${url}."
               now -t ${NOW_TOKEN} alias $url mep-beta
               echo "${url} aliased to https://mep-beta.now.sh"
