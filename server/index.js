@@ -14,6 +14,8 @@ const service = router(get('/images/:tag', getImageIds), post('/mail', client))
 const compressedService = compress(service)
 const corsProtectedService = cors(compressedService)
 const limitProtectedService = ratelimit(opts.rate, corsProtectedService)
-const reportingOnService = sentry(process.env.SENTRY_URL)(limitProtectedService)
+const reportingOnService = sentry(
+  'https://462435ad8fd540b4ade2d83f6640ab53:c214a8f1c7be42e98a2161b20f80a07b@sentry.io/229797'
+)(limitProtectedService)
 
 module.exports = reportingOnService
